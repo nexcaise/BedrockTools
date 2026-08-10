@@ -21,6 +21,7 @@ public:
     BlockSource* region() { return virtualCall<BlockSource*>(this, offsets::VTable::ClientInstance_getRegion); }
     void* minecraftGame() { return virtualCall<void*>(this, offsets::VTable::ClientInstanceGetMinecraftGame); }
     LevelRenderer* levelRenderer() { return field<LevelRenderer*>(this, offsets::ClientInstance::mLevelRenderer); }
+    void* guiData() { return field<void*>(this, offsets::ClientInstance::mGuiData); }
 
     Player* localPlayer(const api::ApiV1* runtime = nullptr) {
         using Function = Player*(*)(ClientInstance*);

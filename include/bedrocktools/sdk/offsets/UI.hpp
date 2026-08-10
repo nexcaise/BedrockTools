@@ -16,6 +16,14 @@ inline constexpr std::size_t FilteredFullString = 0x88;
 inline constexpr std::size_t FilteredFullStringPresent = 0xA0;
 }
 
+
+namespace GuiData {
+inline constexpr std::size_t mScreenSizeData = 0x40;
+inline constexpr std::size_t mScreenSizeDataValid = 0x58;
+inline constexpr std::size_t mGuiScale = 0x5C;
+inline constexpr std::size_t mInvGuiScale = 0x60;
+}
+
 namespace ShulkerPreview {
 inline constexpr std::size_t ItemStackBaseItem = 0x8;
 inline constexpr std::size_t ItemStackBaseUserData = 0x10;

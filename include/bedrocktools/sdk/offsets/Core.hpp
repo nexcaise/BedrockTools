@@ -22,6 +22,7 @@ inline constexpr std::size_t ItemGetMaxDamage = 37;
 
 namespace ClientInstance {
 inline constexpr std::size_t mLevelRenderer = 0x190;
+inline constexpr std::size_t mGuiData = 0x628;
 }
 
 }

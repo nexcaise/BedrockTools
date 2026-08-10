@@ -109,6 +109,7 @@ enum class SignatureId : std::uint16_t {
     GuiDataAddMessage,
     ResourcePacksInfoPacketHandle,
     ResourcePackStackPacketHandle,
+    ItemAppendFormattedHoverText,
     Count
 };
 

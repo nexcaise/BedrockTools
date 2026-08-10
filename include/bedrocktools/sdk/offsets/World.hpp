@@ -81,4 +81,12 @@ inline constexpr std::size_t mLightningLevel = 0x44;
 inline constexpr std::size_t mTargetLightningLevel = 0x48;
 }
 
+namespace Item {
+inline constexpr std::size_t mId = 0x8A;
+inline constexpr std::size_t mRawNameId = 0xB0;
+inline constexpr std::size_t mNamespace = 0xE0;
+inline constexpr std::size_t mFullName = 0x100;
+inline constexpr std::size_t mAllowOffhand = 0x112;
+}
+
 }
