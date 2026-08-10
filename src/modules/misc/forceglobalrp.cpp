@@ -6,11 +6,11 @@
 
 static ForceGlobalRPModule* g_forceGlobalRPMod = nullptr;
 
-static void (*original_ResourcePackStackPacket_handle)(void* _this, void* a1, void* a2, std::shared_ptr<Packet>& packet) = nullptr;
-static void (*original_ResourcePacksInfoPacket_handle)(void* _this, void* a1, void* a2, std::shared_ptr<Packet>& packet) = nullptr;
-static void ResourcePacksInfoPacket_handle_hook(void* _this, void* a1, void* a2, std::shared_ptr<Packet>& packet) {
+static void (*original_ResourcePackStackPacket_handle)(void* _this, void* a1, void* a2, std::shared_ptr<bedrocktools::sdk::Packet>& packet) = nullptr;
+static void (*original_ResourcePacksInfoPacket_handle)(void* _this, void* a1, void* a2, std::shared_ptr<bedrocktools::sdk::Packet>& packet) = nullptr;
+static void ResourcePacksInfoPacket_handle_hook(void* _this, void* a1, void* a2, std::shared_ptr<bedrocktools::sdk::Packet>& packet) {
     if (g_forceGlobalRPMod && g_forceGlobalRPMod->enabled && packet.get() != nullptr) {
-        Packet* pkt = packet.get();
+        bedrocktools::sdk::Packet* pkt = packet.get();
         bedrocktools::sdk::field<bool>(pkt, 0x30) = false;
         bedrocktools::sdk::field<bool>(pkt, 0x33) = false;
     }
@@ -19,9 +19,9 @@ static void ResourcePacksInfoPacket_handle_hook(void* _this, void* a1, void* a2,
         original_ResourcePacksInfoPacket_handle(_this, a1, a2, packet);
     }
 }
-static void ResourcePackStackPacket_handle_hook(void* _this, void* a1, void* a2, std::shared_ptr<Packet>& packet) {
+static void ResourcePackStackPacket_handle_hook(void* _this, void* a1, void* a2, std::shared_ptr<bedrocktools::sdk::Packet>& packet) {
     if (g_forceGlobalRPMod && g_forceGlobalRPMod->enabled && packet.get() != nullptr) {
-        Packet* pkt = packet.get();
+        bedrocktools::sdk::Packet* pkt = packet.get();
         bedrocktools::sdk::field<bool>(pkt, 0x68) = false;
     }
     
