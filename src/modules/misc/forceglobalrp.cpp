@@ -30,7 +30,7 @@ static void ResourcePackStackPacket_handle_hook(void* _this, void* a1, void* a2,
     }
 }
 
-void initFunc1() {
+void ForceGlobalRPModule::initFunc1() {
     if (m_func1Target) return;
     
     uintptr_t addr = bedrocktools::memory::resolve(bedrocktools::memory::SignatureId::ResourcePacksInfoPacketHandle);
@@ -41,7 +41,7 @@ void initFunc1() {
     }
 }
 
-void initFunc2() {
+void ForceGlobalRPModule::initFunc2() {
     if (m_func2Target) return;
     
     uintptr_t addr = bedrocktools::memory::resolve(bedrocktools::memory::SignatureId::ResourcePackStackPacketHandle);
